@@ -8,6 +8,8 @@ commands:
     permission: remoteworldloader.admin.save
   load:
     permission: remoteworldloader.admin.load
+  reset:
+    permission: remoteworldloader.admin.reset
   changeworld:
     aliases: [cw, tpw, tpworld]
     permission: remoteworldloader.user.changeworld
@@ -16,6 +18,8 @@ permissions:
     default: op
   remoteworldloader.admin.load:
     default: op
+  remoteworldloader.admin.reset:
+    default: op
   remoteworldloader.accessworld.*:
     default: op
   remoteworldloader.admin:
@@ -23,6 +27,7 @@ permissions:
     children:
     - remoteworldloader.admin.save
     - remoteworldloader.admin.load
+    - remoteworldloader.admin.reset
     - remoteworldloader.accessworld.*
   remoteworldloader.user.changeworld:
     default: true

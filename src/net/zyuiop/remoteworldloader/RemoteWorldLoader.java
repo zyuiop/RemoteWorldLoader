@@ -21,6 +21,7 @@ package net.zyuiop.remoteworldloader;
 import net.zyuiop.remoteworldloader.cloud.CloudManager;
 import net.zyuiop.remoteworldloader.commands.CommandChangeWorld;
 import net.zyuiop.remoteworldloader.commands.CommandLoad;
+import net.zyuiop.remoteworldloader.commands.CommandReset;
 import net.zyuiop.remoteworldloader.commands.CommandSave;
 import net.zyuiop.remoteworldloader.managers.SavingManager;
 import net.zyuiop.remoteworldloader.version.WorldSaverImpl;
@@ -94,6 +95,7 @@ public class RemoteWorldLoader extends JavaPlugin {
 		getCommand("load").setExecutor(new CommandLoad());
 		getCommand("save").setExecutor(new CommandSave());
 		getCommand("changeworld").setExecutor(new CommandChangeWorld());
+		getCommand("reset").setExecutor(new CommandReset());
 
 		if (getConfig().contains("forcedworlds")) {
 			for (Map<?, ?> map : getConfig().getMapList("forcedworlds")) {
