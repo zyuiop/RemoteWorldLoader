@@ -1,0 +1,28 @@
+name: RemoteWorldLoader
+main: net.zyuiop.remoteworldloader.RemoteWorldLoader
+authors: [zyuiop]
+version: 1.0
+load: STARTUP
+commands:
+  save:
+    permission: remoteworldloader.admin.save
+  load:
+    permission: remoteworldloader.admin.load
+  changeworld:
+    aliases: [cw, tpw, tpworld]
+    permission: remoteworldloader.user.changeworld
+permissions:
+  remoteworldloader.admin.save:
+    default: op
+  remoteworldloader.admin.load:
+    default: op
+  remoteworldloader.accessworld.*:
+    default: op
+  remoteworldloader.admin:
+    default: op
+    children:
+    - remoteworldloader.admin.save
+    - remoteworldloader.admin.load
+    - remoteworldloader.accessworld.*
+  remoteworldloader.user.changeworld:
+    default: true
