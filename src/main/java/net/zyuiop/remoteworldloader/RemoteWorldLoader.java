@@ -86,11 +86,6 @@ public class RemoteWorldLoader extends JavaPlugin {
 		String tenantName = section.getString("tenantName");
 		cloudManager = new CloudManager(endPoint, username, password, tenantName);
 
-		if (!cloudManager.testAuthentication()) {
-			getLogger().severe("Cannot load plugin : Invalid openstack credentials");
-			getServer().shutdown();
-			return;
-		}
 
 		getCommand("load").setExecutor(new CommandLoad());
 		getCommand("save").setExecutor(new CommandSave());
